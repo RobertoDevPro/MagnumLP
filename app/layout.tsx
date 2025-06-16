@@ -7,9 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Magnum Consultoria Empresarial | Potencialize os resultados do seu negócio",
+  title: "Magnum Consultoria Financeira | Potencialize os resultados do seu negócio",
   description:
-    "Soluções estratégicas de consultoria empresarial para impulsionar seu crescimento e maximizar seus lucros.",
+    "Soluções estratégicas de consultoria financeira para impulsionar seu crescimento e maximizar seus lucros.",
 }
 
 export default function RootLayout({
