@@ -32,117 +32,76 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col bg-white">
-      {/* HERO SECTION */}
-      <section className="relative bg-gradient-to-br from-slate-900 to-blue-900 text-white py-6 sm:py-8">
-        <div className="container mx-auto px-4 sm:px-6">
-          {/* Logo no canto superior esquerdo */}
-          <div className="mb-8 sm:mb-12">
-            <Image
-              src="/images/logo-new.png"
-              alt="Magnum Consultoria Empresarial"
-              width={300}
-              height={100}
-              className="h-auto brightness-0 invert"
-              priority
-            />
-          </div>
+   <main className="flex min-h-screen flex-col bg-white">
+  {/* HERO SECTION */}
+  <section className="relative bg-gradient-to-br from-slate-900 to-blue-900 text-white min-h-screen flex items-center">
+    <div className="container mx-auto px-4 sm:px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Conteúdo da esquerda */}
+        <div className="flex flex-col justify-center max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-4">
+             <span className="text-red-500">Consultoria Financeira Completa</span> para fazer sua empresa crescer <br></br>de verdade
+          </h1>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Conteúdo da esquerda */}
-            <div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 sm:mb-8">
-                <span className="text-red-500">Consultoria Financeira Completa</span> para fazer sua empresa crescer de
-                verdade
-              </h1>
+          <p className="text-base sm:text-lg md:text-x1 text-gray-300 leading-relaxed mb-8">
+            Comece com um diagnóstico gratuito e dê o primeiro passo para transformar a gestão financeira do seu
+            negócio com a Magnum Consultoria Empresarial.
+          </p>
 
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8 sm:mb-12">
-                Comece com um diagnóstico gratuito e dê o primeiro passo para transformar a gestão financeira do seu
-                negócio com a Magnum Consultoria Empresarial.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
-                <div className="flex flex-col items-start text-left">
-                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-red-400 mb-2 sm:mb-3" />
-                  <span className="text-gray-300 font-medium text-sm sm:text-base">Consultoria 100% personalizada</span>
-                </div>
-                <div className="flex flex-col items-start text-left">
-                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-red-400 mb-2 sm:mb-3" />
-                  <span className="text-gray-300 font-medium text-sm sm:text-base">
-                    Metodologia prática, com resultados reais
-                  </span>
-                </div>
-                <div className="flex flex-col items-start text-left">
-                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-red-400 mb-2 sm:mb-3" />
-                  <span className="text-gray-300 font-medium text-sm sm:text-base">
-                    Atendimento online para todo Brasil
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-                <Button
-                  size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-8 py-4 sm:py-5 text-sm sm:text-base lg:text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3"
-                  onClick={() =>
-                    handleCTA(
-                      "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
-                    )
-                  }
-                >
-                  <Zap className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 flex-shrink-0" />
-                  <span className="text-center leading-tight">
-                    QUERO AGENDAR MEU
-                    <br className="sm:hidden" />
-                    DIAGNÓSTICO GRATUITO
-                  </span>
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 flex-shrink-0" />
-                </Button>
-
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-red-400 mt-1" />
+              <span className="text-gray-300 text-sm sm:text-base">Consultoria personalizada</span>
             </div>
-
-            {/* Card com imagem na direita */}
-            <div className="hidden lg:block ml-auto">
-              <Card className="border-0 shadow-2xl bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden">
-                <CardContent className="p-8">
-                  {/* Imagem placeholder */}
-                  <div className="w-full h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl mb-6 flex items-center justify-center">
-                    <Image
-                      src="/placeholder.svg?height=256&width=400"
-                      alt="Consultoria Financeira"
-                      width={400}
-                      height={256}
-                      className="w-full h-full object-cover rounded-xl"
-                    />
-                  </div>
-
-                  <div className="text-center text-white">
-                    <p className="text-xl font-bold mb-2">Magnum Consultoria Empresarial</p>
-                    <p className="text-base text-green-200 font-medium mb-4">
-                      Transformando a gestão financeira de empresas desde 2020
-                    </p>
-                    <div className="flex items-center justify-center text-gray-300">
-                      <CheckCircle className="w-5 h-5 text-red-400 mr-2 flex-shrink-0" />
-                      <span className="text-sm">Consultoria financeira especializada e personalizada</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-red-400 mt-1" />
+              <span className="text-gray-300 text-sm sm:text-base">Resultados reais e práticos</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-red-400 mt-1" />
+              <span className="text-gray-300 text-sm sm:text-base">Atendimento em todo Brasil</span>
             </div>
           </div>
+
+          <Button
+            size="lg"
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-4 text-base sm:text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto flex items-center justify-center gap-3"
+            onClick={() =>
+              handleCTA(
+                "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
+              )
+            }
+          >
+            <Zap className="h-5 w-5 flex-shrink-0" />
+            <span className="text-center leading-tight">AGENDAR DIAGNÓSTICO GRATUITO</span>
+            <ArrowRight className="h-5 w-5 flex-shrink-0" />
+          </Button>
         </div>
-      </section>
+
+        {/* Card com logo na direita */}
+        <div className="hidden lg:flex items-center justify-center">
+          <Card className="border-0 shadow-2xl bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden">
+            <CardContent className="p-10 flex items-center justify-center">
+              <Image
+                src="/images/logo-new.png"
+                alt="Magnum Consultoria Empresarial"
+                width={320}
+                height={100}
+                className="h-auto brightness-0 invert"
+                priority
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
 
       {/* PROBLEMAS SECTION */}
       <section className="py-12 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-600 rounded-full text-sm font-medium mb-6">
-                <AlertCircle className="w-4 h-4 mr-2" />
-                Identifique o Problema
-              </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Você trabalha muito, mas o <span className="text-red-600">lucro não aparece</span>?
               </h2>
@@ -207,7 +166,7 @@ export default function Home() {
                 </p>
                 <Button
                   size="lg"
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg w-full max-w-sm sm:max-w-md lg:max-w-none lg:w-auto mx-auto flex items-center justify-center gap-2"
+                  className="bg-red-500 text-white hover:bg-red-600 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg w-full max-w-sm sm:max-w-md lg:max-w-none lg:w-auto mx-auto flex items-center justify-center gap-2"
                   onClick={() =>
                     handleCTA(
                       "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
@@ -216,7 +175,6 @@ export default function Home() {
                 >
                   <span className="text-center leading-tight">
                     QUERO AGENDAR MEU
-                    <br className="sm:hidden" />
                     DIAGNÓSTICO GRATUITO
                   </span>
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
@@ -228,136 +186,136 @@ export default function Home() {
       </section>
 
       {/* METODOLOGIA SECTION */}
-      <section className="py-12 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-6">
-                <Cog className="w-4 h-4 mr-2" />
-                Nossa Metodologia
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Como funciona a <span className="text-blue-600">consultoria financeira</span> da Magnum?
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600">
-                Nossa metodologia é simples, prática e focada no seu resultado:
-              </p>
-            </div>
-
-            <div className="space-y-6 sm:space-y-8">
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
-                      <span className="text-white font-bold text-xl">1</span>
-                    </div>
-                    <div className="text-center sm:text-left">
-                      <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
-                        <Search className="w-6 h-6 text-blue-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Diagnóstico Financeiro Gratuito</h3>
-                      </div>
-                      <p className="text-gray-600 text-base sm:text-lg">
-                        Analisamos a fundo sua situação atual para identificar os gargalos que impedem sua empresa de
-                        crescer e ter clareza.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
-                      <span className="text-white font-bold text-xl">2</span>
-                    </div>
-                    <div className="text-center sm:text-left">
-                      <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
-                        <FileText className="w-6 h-6 text-green-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Plano de Ação Estratégico</h3>
-                      </div>
-                      <p className="text-gray-600 text-base sm:text-lg">
-                        Criamos um plano sob medida para reorganizar seus processos de gestão financeira e melhorar seus
-                        resultados.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
-                      <span className="text-white font-bold text-xl">3</span>
-                    </div>
-                    <div className="text-center sm:text-left">
-                      <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
-                        <Cog className="w-6 h-6 text-purple-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Implantação Guiada</h3>
-                      </div>
-                      <p className="text-gray-600 text-base sm:text-lg">
-                        Acompanhamos você na implantação e execução, para garantir que o plano saia do papel e vire
-                        resultado.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
-                      <span className="text-white font-bold text-xl">4</span>
-                    </div>
-                    <div className="text-center sm:text-left">
-                      <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
-                        <BarChart className="w-6 h-6 text-red-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Acompanhamento Contínuo</h3>
-                      </div>
-                      <p className="text-gray-600 text-base sm:text-lg">
-                        Monitoramos seu progresso e ajustamos a estratégia para manter o crescimento constante. Tenha um
-                        especialista todo mês te auxiliando!
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="text-center mt-12">
-              <Button
-                size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg w-full max-w-sm sm:max-w-md lg:max-w-none lg:w-auto mx-auto flex items-center justify-center gap-2"
-                onClick={() =>
-                  handleCTA(
-                    "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
-                  )
-                }
-              >
-                <span className="text-center leading-tight">
-                  QUERO AGENDAR MEU
-                  <br className="sm:hidden" />
-                  DIAGNÓSTICO GRATUITO
-                </span>
-              </Button>
-            </div>
-          </div>
+<section className="py-12 sm:py-20 bg-blue-50">
+  <div className="container mx-auto px-4 sm:px-6">
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-6">
+          <Cog className="w-4 h-4 mr-2" />
+          Nossa Metodologia
         </div>
-      </section>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Como funciona a <span className="text-blue-600">consultoria financeira</span> da Magnum?
+        </h2>
+        <p className="text-lg sm:text-xl text-gray-700">
+          Nossa metodologia é simples, prática e focada no seu resultado:
+        </p>
+      </div>
+
+      <div className="space-y-6 sm:space-y-8">
+        {/* Etapa 1 */}
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
+          <CardContent className="p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
+                <span className="text-white font-bold text-xl">1</span>
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
+                  <Search className="w-6 h-6 text-blue-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Diagnóstico Financeiro Gratuito</h3>
+                </div>
+                <p className="text-gray-600 text-base sm:text-lg">
+                  Analisamos a fundo sua situação atual para identificar os gargalos que impedem sua empresa de
+                  crescer e ter clareza.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Etapa 2 */}
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
+          <CardContent className="p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
+                <span className="text-white font-bold text-xl">2</span>
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
+                  <FileText className="w-6 h-6 text-blue-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Plano de Ação Estratégico</h3>
+                </div>
+                <p className="text-gray-600 text-base sm:text-lg">
+                  Criamos um plano sob medida para reorganizar seus processos de gestão financeira e melhorar seus
+                  resultados.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Etapa 3 */}
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
+          <CardContent className="p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
+                <span className="text-white font-bold text-xl">3</span>
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
+                  <Cog className="w-6 h-6 text-blue-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Implantação Guiada</h3>
+                </div>
+                <p className="text-gray-600 text-base sm:text-lg">
+                  Acompanhamos você na implantação e execução, para garantir que o plano saia do papel e vire
+                  resultado.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Etapa 4 */}
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
+          <CardContent className="p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
+                <span className="text-white font-bold text-xl">4</span>
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
+                  <BarChart className="w-6 h-6 text-blue-600 mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Acompanhamento Contínuo</h3>
+                </div>
+                <p className="text-gray-600 text-base sm:text-lg">
+                  Monitoramos seu progresso e ajustamos a estratégia para manter o crescimento constante. Tenha um
+                  especialista todo mês te auxiliando!
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Botão final */}
+      <div className="text-center mt-12">
+        <Button
+          size="lg"
+          className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg w-full max-w-sm sm:max-w-md lg:max-w-none lg:w-auto mx-auto flex items-center justify-center gap-2"
+          onClick={() =>
+            handleCTA(
+              "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
+            )
+          }
+        >
+          <span className="text-center leading-tight">
+            QUERO AGENDAR MEU DIAGNÓSTICO GRATUITO
+          </span>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* AUTORIDADE SECTION */}
-      <section className="py-12 sm:py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-white via-white to-red-100">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-6">
-                <User className="w-4 h-4 mr-2" />
-                Quem Está Por Trás
-              </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Quem está por trás da <span className="text-blue-600">Magnum</span>?
+                Quem está por trás da <span className="text-red-600">Magnum</span>?
               </h2>
             </div>
 
@@ -382,25 +340,25 @@ export default function Home() {
 
                     <div className="grid grid-cols-1 gap-4">
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Administrador com MBAs em Planejamento Estratégico e Finanças Corporativas
                         </span>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Atua como consultor empresarial desde 2020
                         </span>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Experiência sólida com empresas de indústria, comércio e serviços
                         </span>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Atendimento 100% online para todo o Brasil
                         </span>
@@ -414,89 +372,81 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESULTADOS SECTION */}
-      <section className="py-12 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-6">
-                <Target className="w-4 h-4 mr-2" />
-                Seus Resultados
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                O que você vai conquistar com nossa <span className="text-green-600">consultoria</span>?
-              </h2>
+     {/* RESULTADOS SECTION */}
+<section className="py-12 sm:py-20 bg-gradient-to-br from-green-100 via-white to-green-50">
+  <div className="container mx-auto px-4 sm:px-6">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          O que você vai conquistar <span className="text-green-600"><br />com nossa consultoria</span>?
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
+          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <BarChart3 className="h-8 w-8 text-blue-600" />
             </div>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
+              Controle financeiro claro e real
+            </h3>
+          </CardContent>
+        </Card>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
-                <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <BarChart3 className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
-                    Controle financeiro claro e real
-                  </h3>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
-                <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <DollarSign className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
-                    Redução de custos e melhor organização do caixa
-                  </h3>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
-                <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
-                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <TrendingUp className="h-8 w-8 text-purple-600" />
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
-                    Planejamento que gera lucro e crescimento sustentável
-                  </h3>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
-                <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="h-8 w-8 text-red-600" />
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
-                    Segurança para tomar decisões estratégicas
-                  </h3>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group sm:col-span-2 lg:col-span-1">
-                <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Handshake className="h-8 w-8 text-orange-600" />
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
-                    Consultoria focada em resultados, com acompanhamento constante
-                  </h3>
-                </CardContent>
-              </Card>
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
+          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <DollarSign className="h-8 w-8 text-green-600" />
             </div>
-          </div>
-        </div>
-      </section>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
+              Redução de custos e melhor organização do caixa
+            </h3>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
+          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
+            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <TrendingUp className="h-8 w-8 text-purple-600" />
+            </div>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
+              Planejamento que gera lucro e crescimento sustentável
+            </h3>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
+          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Shield className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
+              Segurança para tomar decisões estratégicas
+            </h3>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group sm:col-span-2 lg:col-span-1">
+          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col">
+            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Handshake className="h-8 w-8 text-orange-600" />
+            </div>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight flex-grow flex items-center justify-center">
+              Consultoria focada em resultados, com acompanhamento constante
+            </h3>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* DEPOIMENTOS SECTION */}
       <section className="py-12 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-600 rounded-full text-sm font-medium mb-6">
-                <Star className="w-4 h-4 mr-2" />
-                Depoimentos Reais
-              </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Depoimentos de quem já <span className="text-blue-600">contratou</span>
               </h2>
@@ -524,7 +474,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-              Vagas limitadas – Comece pelo <span className="text-green-400">diagnóstico gratuito</span>
+              Comece pelo <span className="text-green-400">diagnóstico gratuito!</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 mb-12">
               Quer transformar suas finanças e ver sua empresa crescer?
@@ -548,7 +498,6 @@ export default function Home() {
             >
               <span className="text-center leading-tight">
                 QUERO AGENDAR MEU
-                <br className="sm:hidden" />
                 DIAGNÓSTICO GRATUITO
                 <br className="sm:hidden" />
                 <span className="hidden sm:inline"> PELO WHATSAPP</span>
