@@ -41,7 +41,7 @@ export default function Home() {
             <Image
               src="/images/logo-new.png"
               alt="Magnum Consultoria Empresarial"
-              width={200}
+              width={300}
               height={100}
               className="h-auto brightness-0 invert"
               priority
