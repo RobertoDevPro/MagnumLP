@@ -190,7 +190,6 @@ export default function Home() {
   <div className="container mx-auto px-4 sm:px-6">
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
           Como funciona a <span className="text-blue-600">consultoria financeira</span> da Magnum?
         </h2>
@@ -337,25 +336,25 @@ export default function Home() {
 
                     <div className="grid grid-cols-1 gap-4">
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Administrador com MBAs em Planejamento Estratégico e Finanças Corporativas
                         </span>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Atua como consultor empresarial desde 2020
                         </span>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Experiência sólida com empresas de indústria, comércio e serviços
                         </span>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 text-sm sm:text-base">
                           Atendimento 100% online para todo o Brasil
                         </span>
