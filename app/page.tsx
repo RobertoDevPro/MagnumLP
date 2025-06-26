@@ -34,13 +34,25 @@ export default function Home() {
   return (
    <main className="flex min-h-screen flex-col bg-white">
   {/* HERO SECTION */}
-  <section className="relative bg-gradient-to-br from-slate-900 to-blue-900 text-white min-h-screen flex items-center">
-    <div className="container mx-auto px-4 sm:px-6">
+  <section className="relative bg-gradient-to-br from-slate-900 to-blue-900 text-white min-h-screen flex items-center overflow-hidden">
+    
+    {/* Imagem decorativa inclinada no canto direito */}
+    <div className="absolute right-0 top-0 h-full w-full lg:w-1/2 z-0 pointer-events-none">
+      <img
+        src="/images/fundomagnum.jpg"
+        alt="Fundo Magnum"
+        className="absolute right-0 top-0 h-[120%] w-auto transform rotate-6 opacity-20"
+      />
+      {/* Overlay para efeito de cor gradiente sobre a imagem */}
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-slate-900/40 to-blue-900/60"></div>
+    </div>
+
+    <div className="container mx-auto px-4 sm:px-6 relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Conteúdo da esquerda */}
         <div className="flex flex-col justify-center max-w-2xl">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-4">
-             <span className="text-red-500">Consultoria Financeira Completa</span> para fazer sua empresa crescer <br></br>de verdade
+            <span className="text-red-500">Consultoria Financeira Completa</span> para fazer sua empresa crescer <br />de verdade
           </h1>
 
           <p className="text-base sm:text-lg md:text-x1 text-gray-300 leading-relaxed mb-8">
@@ -64,38 +76,22 @@ export default function Home() {
           </div>
 
           <Button
-            size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white px-6 py-4 text-base sm:text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto flex items-center justify-center gap-3"
-            onClick={() =>
-              handleCTA(
-                "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
-              )
-            }
-          >
-            <Zap className="h-5 w-5 flex-shrink-0" />
-            <span className="text-center leading-tight">AGENDAR DIAGNÓSTICO GRATUITO</span>
-            <ArrowRight className="h-5 w-5 flex-shrink-0" />
-          </Button>
-        </div>
+  size="lg"
+  className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-lg bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
+  onClick={() =>
+    handleCTA(
+      "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
+    )
+  }
+>
+  <span className="text-center leading-tight">QUERO AGENDAR MEU DIAGNÓSTICO GRATUITO</span>
+</Button>
 
-        {/* Card com logo na direita */}
-        <div className="hidden lg:flex items-center justify-center">
-          <Card className="border-0 shadow-2xl bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden">
-            <CardContent className="p-10 flex items-center justify-center">
-              <Image
-                src="/images/logo-new.png"
-                alt="Magnum Consultoria Empresarial"
-                width={320}
-                height={100}
-                className="h-auto brightness-0 invert"
-                priority
-              />
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>
   </section>
+
 
       {/* PROBLEMAS SECTION */}
       <section className="py-12 sm:py-20 bg-gray-50">
@@ -165,20 +161,19 @@ export default function Home() {
                   lucro sustentável.
                 </p>
                 <Button
-                  size="lg"
-                  className="bg-red-500 text-white hover:bg-red-600 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg w-full max-w-sm sm:max-w-md lg:max-w-none lg:w-auto mx-auto flex items-center justify-center gap-2"
-                  onClick={() =>
-                    handleCTA(
-                      "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
-                    )
-                  }
-                >
-                  <span className="text-center leading-tight">
-                    QUERO AGENDAR MEU
-                    DIAGNÓSTICO GRATUITO
-                  </span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                </Button>
+  size="lg"
+  className="bg-red-500 text-white hover:bg-red-600 px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-base lg:text-lg font-bold rounded-lg w-full sm:w-auto sm:max-w-md lg:max-w-none mx-auto flex items-center justify-center gap-2 whitespace-nowrap"
+  onClick={() =>
+    handleCTA(
+      "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
+    )
+  }
+>
+  <span className="text-center leading-tight">
+    QUERO AGENDAR MEU DIAGNÓSTICO GRATUITO
+  </span>
+</Button>
+
               </div>
             </div>
           </div>
@@ -186,14 +181,14 @@ export default function Home() {
       </section>
 
       {/* METODOLOGIA SECTION */}
-<section className="py-12 sm:py-20 bg-blue-50">
+<section className="py-12 sm:py-20 bg-blue-900">
   <div className="container mx-auto px-4 sm:px-6">
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Como funciona a <span className="text-blue-600">consultoria financeira</span> da Magnum?
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          Como funciona a <span className="text-red-600">consultoria financeira</span> da Magnum?
         </h2>
-        <p className="text-lg sm:text-xl text-gray-700">
+        <p className="text-lg sm:text-xl text-white">
           Nossa metodologia é simples, prática e focada no seu resultado:
         </p>
       </div>
@@ -305,69 +300,6 @@ export default function Home() {
 </section>
 
 
-      {/* AUTORIDADE SECTION */}
-      <section className="py-12 sm:py-20 bg-gradient-to-br from-white via-white to-red-100">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Quem está por trás da <span className="text-red-600">Magnum</span>?
-              </h2>
-            </div>
-
-            <Card className="border-0 shadow-xl bg-white overflow-hidden">
-              <CardContent className="p-0">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="lg:w-1/3 relative">
-                    <Image
-                      src="/images/businessman.png"
-                      alt="Fernando Cruz Ferreira"
-                      width={400}
-                      height={500}
-                      className="w-full h-64 lg:h-full object-cover"
-                    />
-                  </div>
-                  <div className="lg:w-2/3 p-8 sm:p-12">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Fernando Cruz Ferreira</h3>
-                    <p className="text-base sm:text-lg text-gray-600 mb-6">
-                      Consultor financeiro fundador da Magnum Consultoria Empresarial, com formação sólida e experiência
-                      real em micro e pequenas empresas.
-                    </p>
-
-                    <div className="grid grid-cols-1 gap-4">
-                      <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm sm:text-base">
-                          Administrador com MBAs em Planejamento Estratégico e Finanças Corporativas
-                        </span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm sm:text-base">
-                          Atua como consultor empresarial desde 2020
-                        </span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm sm:text-base">
-                          Experiência sólida com empresas de indústria, comércio e serviços
-                        </span>
-                      </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm sm:text-base">
-                          Atendimento 100% online para todo o Brasil
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
      {/* RESULTADOS SECTION */}
 <section className="py-12 sm:py-20 bg-gradient-to-br from-green-100 via-white to-green-50">
   <div className="container mx-auto px-4 sm:px-6">
@@ -438,6 +370,70 @@ export default function Home() {
   </div>
 </section>
 
+{/* AUTORIDADE SECTION */}
+      <section className="py-12 sm:py-20 bg-red-100">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Quem está por trás da <span className="text-red-600">Magnum</span>?
+              </h2>
+            </div>
+
+            <Card className="border-0 shadow-xl bg-white overflow-hidden">
+              <CardContent className="p-0">
+                <div className="flex flex-col lg:flex-row">
+                  <div className="lg:w-1/3 relative">
+                    <Image
+  src="/images/businessman.png"
+  alt="Fernando Cruz Ferreira"
+  width={400}
+  height={500}
+  className="w-full h-64 lg:h-full object-cover object-[center_30%] lg:object-center"
+/>
+                  </div>
+                  <div className="lg:w-2/3 p-8 sm:p-12">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Fernando Cruz Ferreira</h3>
+                    <p className="text-base sm:text-lg text-gray-600 mb-6">
+                      Consultor financeiro fundador da Magnum Consultoria Empresarial, com formação sólida e experiência
+                      real em micro e pequenas empresas.
+                    </p>
+
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm sm:text-base">
+                          Administrador com MBAs em Planejamento Estratégico e Finanças Corporativas
+                        </span>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm sm:text-base">
+                          Atua como consultor empresarial desde 2020
+                        </span>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm sm:text-base">
+                          Experiência sólida com empresas de indústria, comércio e serviços
+                        </span>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-red-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm sm:text-base">
+                          Atendimento 100% online para todo o Brasil
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+
       {/* DEPOIMENTOS SECTION */}
       <section className="py-12 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6">
@@ -484,31 +480,31 @@ export default function Home() {
             </div>
 
             <Button
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-4 sm:py-6 text-sm sm:text-base lg:text-lg font-bold rounded-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 mb-8 w-full max-w-xs sm:max-w-sm lg:max-w-none lg:w-auto mx-auto flex items-center justify-center gap-2"
-              onClick={() =>
-                handleCTA(
-                  "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
-                )
-              }
-            >
-              <span className="text-center leading-tight">
-                QUERO AGENDAR MEU
-                DIAGNÓSTICO GRATUITO
-                <br className="sm:hidden" />
-                <span className="hidden sm:inline"> PELO WHATSAPP</span>
-              </span>
-              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 flex-shrink-0" />
-            </Button>
+  size="lg"
+  className="bg-green-600 hover:bg-green-700 text-white px-3 sm:px-6 py-3 sm:py-6 text-xs sm:text-base lg:text-lg font-bold rounded-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 mb-8 w-full max-w-[320px] sm:max-w-sm lg:max-w-none lg:w-auto mx-auto flex items-center justify-center gap-2"
+  onClick={() =>
+    handleCTA(
+      "Olá! Quero agendar meu diagnóstico gratuito e saber mais sobre a consultoria financeira da Magnum. Pode me explicar?",
+    )
+  }
+>
+  <span className="text-center leading-tight">
+    QUERO AGENDAR MEU
+    DIAGNÓSTICO GRATUITO
+    <br className="sm:hidden" />
+    <span className="hidden sm:inline"> PELO WHATSAPP</span>
+  </span>
+</Button>
 
-            <div className="mt-16 p-6 sm:p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
-              <div className="flex justify-center mb-4">
+
+            <div className="mt-1 p-6 sm:p- bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
+              <div className="flex justify-center mb-0">
                 <Image
                   src="/images/logo.png"
                   alt="Magnum Consultoria Empresarial"
                   width={450}
                   height={60}
-                  className="h-auto"
+                  className="h-auto brightness-0 invert"
                 />
               </div>
               <p className="text-base sm:text-lg text-green-200 font-medium">
